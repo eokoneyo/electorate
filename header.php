@@ -11,10 +11,19 @@
 	      	<nav>
 			    <div class="nav-wrapper">
 			      <a href="/" class="brand-logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name') ?></a>
-			      <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-			      	{% block customMenu %}{% endblock %}
-			      </ul> -->
-			      <?php //wp_nav_menu(); ?>
+			      <?php     /**
+			      	* Displays a navigation menu
+			      	* @param array $args Arguments
+			      	*/
+			      	$args = array(
+			      		'theme_location' => 'primary',
+			      		'items_wrap' => '%3$s',
+			      		'container' => 'ul',
+			      		'menu_class' => 'right',
+			      		'menu_id' => 'nav-mobile'
+			      	);
+			      
+			      	wp_nav_menu( $args ); ?>
 			    </div>
 			</nav>
 	    </header>
