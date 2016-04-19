@@ -8,6 +8,14 @@
 	</head>
 	<body>
 		<header>
-			<p><?php bloginfo('name') ?></p>
-		</header>
+	      	<nav>
+			    <div class="nav-wrapper">
+			      <a href="/" class="brand-logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name') ?></a>
+			      <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+			      	{% block customMenu %}{% endblock %}
+			      </ul> -->
+			      <?php //wp_nav_menu(); ?>
+			    </div>
+			</nav>
+	    </header>
 		<div id="site-wrapper">

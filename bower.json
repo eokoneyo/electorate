@@ -1,0 +1,25 @@
+{
+  "name": "dante",
+  "authors": [
+    "Eyo O. E. <maziey93@gmail.com>"
+  ],
+  "description": "Wordpress theme for my nigg dante",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "material",
+    "wordpress",
+    "theme"
+  ],
+  "license": "MIT",
+  "homepage": "https://maziey93.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./vendor",
+    "test",
+    "tests"
+  ]
+}

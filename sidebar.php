@@ -1,0 +1,1 @@
+<h2>Am a sidebar</h2>
