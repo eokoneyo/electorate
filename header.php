@@ -19,7 +19,7 @@
 			      		'theme_location' => 'primary',
 			      		'items_wrap' => '%3$s',
 			      		'container' => 'ul',
-			      		'menu_class' => 'right',
+			      		'menu_class' => 'right hide-on-med-and-down',
 			      		'menu_id' => 'nav-mobile'
 			      	);
 			      

@@ -21,5 +21,18 @@
     "./vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6"
+  },
+  "overrides": {
+    "materialize" : {
+      "main": [
+        "./bin/materialize.min.css",
+        "./bin/materialize.min.js",
+        "./fonts"
+      ],
+      "dependencies": {}
+    }
+  }
 }
