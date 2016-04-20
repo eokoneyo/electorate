@@ -5,3 +5,9 @@ Author: Eyo O. E.
 Author URI: https://maziey93.github.io
 Version: 0.0.1
 */
+
+/* Single post modifications */
+#single-post .attachment-post-thumbnail {
+	width: 100%;
+	object-fit: contain;
+}
