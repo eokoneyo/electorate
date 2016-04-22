@@ -57,13 +57,13 @@ function dante_setup() {
 add_action( 'after_setup_theme', 'dante_setup' );
 
 //Load vendor files
-function load_css_files() {
+function load_project_dep() {
     wp_register_style('materialize', get_template_directory_uri() . '/vendor/materialize.css');
     wp_register_style('dante', get_stylesheet_uri(), array( 'materialize' ));
     wp_enqueue_style('dante' );
     wp_enqueue_script('materialize_js', get_template_directory_uri() . '/vendor/materialize.js', array ( 'jquery' ));
 }
-add_action( 'wp_enqueue_scripts', 'load_css_files' );
+add_action( 'wp_enqueue_scripts', 'load_project_dep' );
 
 
 //Register Widgets Area Space for theme
@@ -89,5 +89,28 @@ add_filter('get_avatar','add_gravatar_class');
 function add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='avatar circle responsive-img valign", $class);
     return $class;
+}
+
+/*
+* Setup Estimated Reading time for posts.
+*
+* https://www.binarymoon.co.uk/2013/10/wordpress-estimated-reading-time/
+*/
+function dante_estimated_reading_time() {
+
+	$post = get_post();
+
+	$words = str_word_count( strip_tags( $post->post_content ) );
+	$minutes = floor( $words / 120 );
+	$seconds = floor( $words % 120 / ( 120 / 60 ) );
+
+	if ( 1 <= $minutes ) {
+		$estimated_time = $minutes . ' minute' . ($minutes == 1 ? '' : 's') . ', ' . $seconds . ' second' . ($seconds == 1 ? '' : 's');
+	} else {
+		$estimated_time = $seconds . ' second' . ($seconds == 1 ? '' : 's');
+	}
+
+	return $estimated_time;
+
 }
 

@@ -13,16 +13,16 @@
 						<div class="chip">
 							<?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
 						  	<?php echo get_the_author(); ?></p>
-						</div>    
-						<p><i class="material-icons">share</i></p>
+						</div>
+						<p class="white-text">Reading Time : <?php echo dante_estimated_reading_time() ?> </p>
 					</div>
 				</div>
-				<!--<a class="btn-floating btn-large waves-effect waves-light red" id="post-share"><i class="material-icons">share</i></a>-->
 			</div>
 			<div class="container post-content">
 				<div class="row">
 					<div class="col s12">
 						<?php the_content(); ?>
+						<p><i class="material-icons">share</i></p>
 						<?php comments_template('', true); ?>
 					</div>
 				</div>
