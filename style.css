@@ -38,3 +38,17 @@ Version: 0.0.1
 	width: 100%;
 	object-fit: contain;
 }
+
+#single-post .article-jumbotron {
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-size: cover;
+}
+
+#single-post .article-jumbotron .post-title {
+	margin: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}

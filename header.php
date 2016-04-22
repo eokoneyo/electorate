@@ -20,7 +20,7 @@
 			      	* @param array $args Arguments
 			      	*/
 			      	$args = array(
-			      		'theme_location' => 'Primary Menu',
+			      		'theme_location' => 'primary-menu',
 			      		'items_wrap' => '%3$s',
 			      		'container' => 'ul',
 			      		'menu_class' => 'right hide-on-med-and-down',

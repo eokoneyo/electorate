@@ -16,9 +16,9 @@ function dante_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu',      'dante' ),
-		'social'  => __( 'Social Links Menu', 'dante' ),
-	) );
+		'primary-menu' => __( 'Primary Menu'),
+		'social-links-menu'  => __( 'Social Links Menu'),
+	));
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
