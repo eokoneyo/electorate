@@ -10,9 +10,14 @@
 					<div class="container">
 						<h2 class="white-text"><?php the_title(); ?></h2>
 						<p class="white-text"><?php echo the_date('d F Y', false); ?></p>
-						<p >by <?php echo get_the_author(); ?></p>
+						<div class="chip">
+							<?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
+						  	<?php echo get_the_author(); ?></p>
+						</div>    
+						<p><i class="material-icons">share</i></p>
 					</div>
 				</div>
+				<!--<a class="btn-floating btn-large waves-effect waves-light red" id="post-share"><i class="material-icons">share</i></a>-->
 			</div>
 			<div class="container post-content">
 				<div class="row">
