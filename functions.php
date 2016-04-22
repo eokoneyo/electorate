@@ -83,3 +83,11 @@ function dante_widgets_init() {
 }
 add_action( 'widgets_init', 'dante_widgets_init' );
 
+//Initalize custom avatar style for dante
+add_filter('get_avatar','add_gravatar_class');
+
+function add_gravatar_class($class) {
+    $class = str_replace("class='avatar", "class='avatar circle responsive-img valign", $class);
+    return $class;
+}
+
