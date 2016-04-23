@@ -12,16 +12,20 @@
 										// Output the featured image.
 										if ( has_post_thumbnail() ) :
 											?>
-											<div class="tint"></div>
-											<div class="title">
-												<h5 class="white-text center-align"><?php the_title(); ?></h5>
-												<p class="center-align white-text"><?php echo the_date('d F Y', false); ?></p>
+											<div class="index-thumbnails" style="background-image: url(<?php
+												$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); echo $feat_image;?>);">
+												<div class="tint"></div>
+												<div class="title">
+													<h5 class="white-text"><?php the_title(); ?></h5>
+													<p class="white-text"><?php echo the_date('d F Y', false); ?></p>
+												</div>
 											</div>
-											<?php the_post_thumbnail('medium');
+											
+											<?php 
 											
 										else: ?>
 											<div class="noimage-content">
-												<h5 class="grey-text text-darken-4"><a href=" <?php the_permalink(); ?> ">  <?php the_title(); ?></a></h5>
+												<h5 class=""><a class="grey-text text-darken-4" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a></h5>
 												<p><?php echo the_date('d F Y', false); ?></p>
 												<?php the_excerpt(); ?>
 											</div>
@@ -35,8 +39,8 @@
 						            </div>
 						            <div class="col s8 m10">
 						                <p><?php echo get_the_author(); ?></p>
-
-								      	<p><a href="<?php the_permalink(); ?> ">Read more</a></p>
+						                <?php the_category(); ?>
+								      	<!-- <p><a href="<?php the_permalink(); ?> ">Read more</a></p> -->
 						            </div>
 							    </div>
 							  </div>
