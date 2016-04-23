@@ -39,7 +39,7 @@
 						            </div>
 						            <div class="col s8 m10">
 						                <p><?php echo get_the_author(); ?></p>
-						                <?php the_category(); ?>
+						                <?php the_category(', '); ?>
 								      	<!-- <p><a href="<?php the_permalink(); ?> ">Read more</a></p> -->
 						            </div>
 							    </div>

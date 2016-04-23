@@ -2,7 +2,7 @@
 
 
 
-<div class="category-jumbotron">
+<div class="category-jumbotron" style="background-image: url(<?php get_category_image(); ?>);">
 	
 </div>
 

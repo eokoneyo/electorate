@@ -43,6 +43,10 @@ Version: 0.0.1
 	margin: .3em 0;
 }
 
+.card-content ul.post-categories li {
+	display: inline-block;
+}
+
 /* Single post modifications */
 #single-post .attachment-post-thumbnail {
 	width: 100%;
