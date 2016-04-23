@@ -15,7 +15,7 @@
 							<?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
 						  	<?php echo get_the_author(); ?></p>
 						</div>
-						<p class="white-text">Reading Time : <?php echo dante_estimated_reading_time() ?> </p>
+						<p class="white-text"><?php echo dante_estimated_reading_time() ?> Read</p>
 					</div>
 				</div>
 			</div>
