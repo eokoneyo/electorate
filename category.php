@@ -1,9 +1,12 @@
 <?php get_header(); ?>
 
 
-<div class="category-jumbotron" style="background-image: url(<?php echo get_cat_image(); ?>);">
-	<?php ?>
-</div>
+<?php if ( get_cat_image() != '' ) {
+	# code... ?>
+	<div class="category-jumbotron" style="background-image: url(<?php echo get_cat_image(); ?>);">
+		<?php ?>
+	</div> <?php
+} ?>
 
 <div class="container">
 	<div class="row">
@@ -21,9 +24,8 @@
 				            <?php	}
 				            ?>
 				            <div class="card-content">
-				            	<a href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
-				            	<p>By <?php echo get_the_author(); ?></p>
-								<p><?php echo the_date('d F Y'); ?></p>
+				            	<p><?php the_title(); ?></p>
+								<p><span class="date"><?php echo the_date('d F Y'); ?></span> <span class="right"><a href="<?php the_permalink(); ?>" class="cap-text">Read more</a></span></p>
 				            </div>
 			         	 </div>
 					</div>
