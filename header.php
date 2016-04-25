@@ -7,7 +7,6 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<title><?php bloginfo('title')?></title>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>">
 		<?php wp_head() ?>
 	</head>
 	<body>
@@ -19,15 +18,16 @@
 			      	* Displays a navigation menu
 			      	* @param array $args Arguments
 			      	*/
-			      	$args = array(
-			      		'theme_location' => 'primary-menu',
-			      		'items_wrap' => '%3$s',
-			      		'container' => 'ul',
-			      		'menu_class' => 'right hide-on-med-and-down',
-			      		'menu_id' => 'nav-mobile'
-			      	);
-			      
-			      	wp_nav_menu( $args ); ?>
+			      		$args = array(
+			      			'theme_location' => 'primary-menu',
+			      			'container' => 'ul',
+			      			'container_class' => 'menu-{menu-slug}-container',
+			      			'container_id' => '',
+			      			'menu_class' => 'right hide-on-med-and-down',
+			      			'menu_id' => 'nav-mobile'
+			      		);
+			      	
+			      		wp_nav_menu( $args ); ?>
 			    </div>
 			</nav>
 	    </header>
