@@ -124,6 +124,7 @@ function get_cat_image() {
 	if (function_exists('category_image_src')) {
 		return $image = category_image_src( array( 'size' => 'full' ) , false ); 
 	} else {
+		//can set a defualt image for categories here
 		return $image = '';
 	}
 
