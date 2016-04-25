@@ -1,14 +1,13 @@
 <?php get_header(); ?>
 
 
-
-<div class="category-jumbotron" style="background-image: url(<?php get_category_image(); ?>);">
-	
+<div class="category-jumbotron" style="background-image: url(<?php echo get_cat_image(); ?>);">
+	<?php ?>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col s8">
+		<div class="col l8 s12 category-posts">
 			<div class="row">
 				<?php while (have_posts()) : the_post(); ?>
 
@@ -34,7 +33,7 @@
 			</div>
 		</div>
 
-		<div class="col s4">
+		<div class="col l4 s12">
 			<div> <?php get_sidebar(); ?></div>
 		</div>
 	</div>

@@ -7,6 +7,24 @@ Version: 0.0.1
 */
 
 /* Utilites */
+.normalize-font {
+	font-weight: 300;
+}
+
+nav{
+	background: #fff;
+}
+
+nav .brand-logo, nav ul li a {
+	color: #000;
+}
+
+@media screen and (min-width: 992px) {
+	nav .brand-logo {
+		padding-left: 2em;
+	}
+}
+
 .card .tint {
 	position: absolute;
 	background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .6));
@@ -35,16 +53,37 @@ Version: 0.0.1
 	z-index: 3;
 }
 
+.post-card .date {
+	color: rgb(158, 156, 156);
+	font-weight: 100;
+	margin-top: 0px;
+	font-size: .85em;
+}
+
 .post-card .noimage-content {
 	padding: 1em;
+	height: 100%;
+	overflow-y: hidden;
 }
 
-.card-content ul.post-categories {
-	margin: .3em 0;
+.post-card .noimage-content h5 {
+	margin-bottom: 0px;
 }
 
-.card-content ul.post-categories li {
-	display: inline-block;
+.post-card .noimage-content h5 a , .post-card .title h5, .card-content a[rel=category] {
+	font-weight: 300;
+}
+
+.post-card .noimage-content h5 a , .card-content a[rel=category] {
+	font-size: 0.8em;
+}
+
+.post-card .title h5 {
+	font-size: 1.2em;
+}
+
+.card-content a[rel=category] {
+	text-transform: capitalize;
 }
 
 /* Single post modifications */
@@ -106,5 +145,18 @@ Version: 0.0.1
 #single-post .post-content {
 	padding: 3em 0px 0px;
 }
+
+.category-jumbotron {
+	height: 65vh;
+	background: #dd4040;
+	opacity: .5;
+	background-size: cover;
+}
+
+.category-posts {
+	position: relative;
+	top: -7em;
+}
+
 
 

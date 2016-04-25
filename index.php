@@ -17,7 +17,7 @@
 												<div class="tint"></div>
 												<div class="title">
 													<h5 class="white-text"><?php the_title(); ?></h5>
-													<p class="white-text"><?php echo the_date('d F Y', false); ?></p>
+													<p class="date"><?php echo the_date('d F Y', false); ?></p>
 												</div>
 											</div>
 											
@@ -26,7 +26,7 @@
 										else: ?>
 											<div class="noimage-content">
 												<h5 class=""><a class="grey-text text-darken-4" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a></h5>
-												<p><?php echo the_date('d F Y', false); ?></p>
+												<p class="date"><?php echo the_date('d F Y', false); ?></p>
 												<?php the_excerpt(); ?>
 											</div>
 									<?php

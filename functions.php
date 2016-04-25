@@ -114,18 +114,18 @@ function dante_estimated_reading_time() {
 
 }
 
-
 /*
 * Function for getting the category image
 * https://premium.wpmudev.org/blog/how-to-add-feature-images-to-your-wordpress-categories/ 
 * WPCustom Category Image must be installed
  */
-function get_category_image() {
-	// grab the URL for the category image
+function get_cat_image() {
+
 	if (function_exists('category_image_src')) {
-		return $category_image = category_image_src( array( 'size' => 'full' ) , false ); 
+		return $image = category_image_src( array( 'size' => 'full' ) , false ); 
 	} else {
-		return $category_image = '';
+		return $image = '';
 	}
-}
+
+} 
 
