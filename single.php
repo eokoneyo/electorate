@@ -8,7 +8,6 @@
 				<div class="tint"></div>
 				<div class="post-title">
 					<div class="container">
-						<p><i class="material-icons">share</i></p>
 						<h2 class="white-text"><?php the_title(); ?></h2>
 						<p class="white-text"><?php echo the_date('d F Y', false); ?></p>
 						<div class="chip">

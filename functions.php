@@ -80,7 +80,20 @@ function dante_register_required_plugins() {
 			'name'      => 'WPCustom Category Image',
 			'slug'      => 'wpcustom-category-image',
 			'required'  => true,
+		),
+
+		array(
+			'name'      => 'Twitter',
+			'slug'      => 'twitter',
+			'required'  => true,
+		),
+
+		array(
+			'name'      => 'Disqus',
+			'slug'      => 'disqus-comment-system',
+			'required'  => true,
 		)
+
 
 	);
 
@@ -139,7 +152,11 @@ function dante_widgets_init() {
 	register_sidebar(array(
 	'name'          => 'Footer',
 	'id'            => 'footer-widget',
-	'description'   => 'Widget space for our footer'
+	'description'   => 'Widget space for our footer, should only contain 4 widget optimally',
+	'before_widget' => '<div id="footer-widget" class="col s12 l3">',
+	'after_widget' 	=> '</div>',
+	'before_title' 	=> '<h2 class="rounded">',
+	'after_title' 	=> '</h2>'
 	));
 }
 add_action( 'widgets_init', 'dante_widgets_init' );

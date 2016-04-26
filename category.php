@@ -4,7 +4,7 @@
 <?php if ( get_cat_image() != '' ) {
 	# code... ?>
 	<div class="category-jumbotron" style="background-image: url(<?php echo get_cat_image(); ?>);">
-		<?php ?>
+		
 	</div> <?php
 } ?>
 

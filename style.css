@@ -171,5 +171,15 @@ nav .brand-logo, nav ul li a {
 	object-fit: cover;
 }
 
+footer.page-footer {
+    background-color: #fdd835;
+}
+
+footer.page-footer * {
+	color: #000;
+}
+
+
+
 
 

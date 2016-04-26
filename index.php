@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<div>
-		
+			<?php if ( have_posts() ) : ?>
 			<div class="container">
 				<div class="row">
 					<?php while (have_posts()): the_post() ?>
@@ -16,7 +16,7 @@
 												$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); echo $feat_image;?>);">
 												<div class="tint"></div>
 												<div class="title">
-													<h5 class="white-text"><?php the_title(); ?></h5>
+													<h5 class="white-text"><a class="white-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a></h5>
 													<p class="date"><?php echo the_date('d F Y', false); ?></p>
 												</div>
 											</div>
@@ -40,14 +40,19 @@
 						            <div class="col s8 m10">
 						                <p><?php echo get_the_author(); ?></p>
 						                <?php the_category(', '); ?>
-								      	<!-- <p><a href="<?php the_permalink(); ?> ">Read more</a></p> -->
 						            </div>
 							    </div>
 							  </div>
 					  	</div>
 					<?php endwhile; ?>
 				</div>
+
+				<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+				<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 			</div>
+			<?php else : ?>
+			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+			<?php endif; ?>
 	</div>
 
 <?php get_footer(); ?>
