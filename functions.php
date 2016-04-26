@@ -132,6 +132,7 @@ function load_project_dep() {
     wp_register_style('dante', get_stylesheet_uri(), array( 'materialize','font-awesome'));
     wp_enqueue_style('dante' );
     wp_enqueue_script('materialize_js', get_template_directory_uri() . '/vendor/js/materialize.js', array ( 'jquery' ));
+    wp_enqueue_script('interactions', get_template_directory_uri().'/assets/js/interactions.js', array('materialize_js'));
 }
 add_action( 'wp_enqueue_scripts', 'load_project_dep' );
 

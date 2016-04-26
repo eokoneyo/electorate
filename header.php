@@ -13,12 +13,14 @@
 		<header>
 	      	<nav>
 			    <div class="nav-wrapper">
-			      <a href="/" class="brand-logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name') ?></a>
+			      <a class="brand-logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name') ?></a>
+			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			      <?php     /**
 			      	* Displays a navigation menu
 			      	* @param array $args Arguments
-			      	*/
-			      		$args = array(
+			      	*/	
+			      		//Desktop menu
+			      		$desktop_menu_args = array(
 			      			'theme_location' => 'primary-menu',
 			      			'container' => 'ul',
 			      			'container_class' => 'menu-{menu-slug}-container',
@@ -27,7 +29,22 @@
 			      			'menu_id' => 'nav-mobile'
 			      		);
 			      	
-			      		wp_nav_menu( $args ); ?>
+			      		wp_nav_menu( $desktop_menu_args ); ?>
+
+			      <?php    /**
+			      	* Displays a navigation menu
+			      	* @param array $args Arguments
+			      	*/
+			      	$mobile_menu_args = array(
+			      		'theme_location' => 'primary-menu',
+			      		'container' => 'ul',
+			      		'container_class' => 'menu-{menu-slug}-container',
+			      		'container_id' => '',
+			      		'menu_class' => 'side-nav',
+			      		'menu_id' => 'mobile-demo'
+			      	);
+			      
+			      	wp_nav_menu( $mobile_menu_args ); ?>
 			    </div>
 			</nav>
 	    </header>

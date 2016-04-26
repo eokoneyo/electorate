@@ -15,8 +15,14 @@ nav{
 	background: #fff;
 }
 
-nav .brand-logo, nav ul li a {
-	color: #000;
+nav * {
+	color: #000 !important;
+}
+
+
+nav ul li a {
+	text-transform: uppercase;
+	font-weight: 300;
 }
 
 @media screen and (min-width: 992px) {
@@ -173,6 +179,8 @@ nav .brand-logo, nav ul li a {
 
 footer.page-footer {
     background-color: #fdd835;
+    margin-top: 0px;
+    padding-top: 30px;
 }
 
 footer.page-footer * {
