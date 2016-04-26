@@ -7,12 +7,23 @@ Version: 0.0.1
 */
 
 /* Utilites */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+  flex: 1 0 auto;
+}
+
 .normalize-font {
 	font-weight: 300;
 }
 
 nav{
-	background: #fff;
+	background: #fdd835;
 }
 
 nav * {
@@ -25,10 +36,69 @@ nav ul li a {
 	font-weight: 300;
 }
 
+nav ul a:hover {
+	background: transparent;
+}
+
+nav .brand-logo {
+	font-size: 1.4em;
+	text-transform: uppercase;
+}
+
+nav .brand-logo:after, nav .brand-logo:before {
+	content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+}
+
+nav .brand-logo:after {
+    right: -0.2em;
+	bottom: 0.3em;
+    border-width: 0 2px 2px 0;
+}
+
+nav .brand-logo:before {
+	top: 0.4em;
+	left: 0;
+	border-width: 2px 0 0 2px;
+}
+
+@media only screen and (max-width: 40em) {
+
+	nav .brand-logo:after {
+		bottom: 0.2em;
+	}
+
+	nav .brand-logo:before {
+		top: 0.2em;
+	}
+}
+
+.brand-highlight {
+	background: #000;
+	color: #fff !important;
+	padding: .5em;
+	margin-left: .2em;
+}
+ 
 @media screen and (min-width: 992px) {
 	nav .brand-logo {
-		padding-left: 2em;
+		margin-left: 2em;
 	}
+}
+
+/* Target active menu page */
+#nav-mobile li.current_page_item a:after {
+	content: '';
+	position: relative;
+	top: -1em;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: #fdd835;
 }
 
 .date {
@@ -48,6 +118,19 @@ nav ul li a {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+}
+
+#site-wrapper {
+	background: #f7f7f7;
+}
+
+#site-wrapper .row {
+	margin-bottom: 0px !important;
+	padding-bottom: 20px;
+}
+
+.all-posts {
+	padding-top: 2em;
 }
 
 .post-card {
@@ -111,7 +194,7 @@ nav ul li a {
 }
 
 #single-post .article-jumbotron:after {
-	background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
+	background: linear-gradient(-45deg, #f7f7f7 16px, transparent 0), linear-gradient(45deg, #f7f7f7 16px, transparent 0);
     background-position: left-bottom;
     background-repeat: repeat-x;
     background-size: 32px 32px;

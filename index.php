@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div>
+	<div class="all-posts">
 			<?php if ( have_posts() ) : ?>
 			<div class="container">
 				<div class="row">
