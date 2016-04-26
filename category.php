@@ -10,7 +10,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col l8 s12 category-posts">
+		<div class="col l8 s12 category-posts" <?php if ( get_cat_image() == ''){?> style="top: 2em;"<?php }?> >
 			<div class="row">
 				<?php while (have_posts()) : the_post(); ?>
 
@@ -25,7 +25,7 @@
 				            ?>
 				            <div class="card-content">
 				            	<p><?php the_title(); ?></p>
-								<p><span class="date"><?php echo the_date('d F Y'); ?></span> <span class="right"><a href="<?php the_permalink(); ?>" class="cap-text">Read more</a></span></p>
+								<p><span class="date"><?php echo the_date('d F Y'); ?></span> <span class="right"><a href="<?php the_permalink(); ?>" class="cap-text">Read more <i class="fa fa-chevron-right"></i></a></span></p>
 				            </div>
 			         	 </div>
 					</div>

@@ -114,10 +114,11 @@ add_action( 'after_setup_theme', 'dante_setup' );
 
 //Load vendor files
 function load_project_dep() {
-    wp_register_style('materialize', get_template_directory_uri() . '/vendor/materialize.css');
-    wp_register_style('dante', get_stylesheet_uri(), array( 'materialize' ));
+    wp_register_style('materialize', get_template_directory_uri() . '/vendor/css/materialize.css');
+    wp_register_style('font-awesome', get_template_directory_uri().'/vendor/css/font-awesome.min.css');
+    wp_register_style('dante', get_stylesheet_uri(), array( 'materialize','font-awesome'));
     wp_enqueue_style('dante' );
-    wp_enqueue_script('materialize_js', get_template_directory_uri() . '/vendor/materialize.js', array ( 'jquery' ));
+    wp_enqueue_script('materialize_js', get_template_directory_uri() . '/vendor/js/materialize.js', array ( 'jquery' ));
 }
 add_action( 'wp_enqueue_scripts', 'load_project_dep' );
 
@@ -128,7 +129,11 @@ function dante_widgets_init() {
 	register_sidebar(array(
 	'name'          => 'Category Sidebar',
 	'id'            => 'category-sidebar',
-	'description'   => 'Sidebar for the post page'
+	'description'   => 'Sidebar for category page',
+	'before_widget' => '<div id="category-widget">',
+	'after_widget' 	=> '</div>',
+	'before_title' 	=> '<h2 class="rounded">',
+	'after_title' 	=> '</h2>'
 	));
 
 	register_sidebar(array(
@@ -185,4 +190,26 @@ function get_cat_image() {
 	}
 
 } 
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 30;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 

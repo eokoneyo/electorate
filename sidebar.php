@@ -1,4 +1,3 @@
-<h2>Am a sidebar</h2>
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('category-sidebar') ) : 
 
-
-<?php dynamic_sidebar( 'category_sidebar' ); ?>
+endif; ?>

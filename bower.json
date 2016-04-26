@@ -23,14 +23,22 @@
     "tests"
   ],
   "dependencies": {
-    "Materialize": "materialize#^0.97.6"
+    "Materialize": "materialize#^0.97.6",
+    "font-awesome": "^4.6.1"
   },
   "overrides": {
     "materialize": {
       "main": [
         "./bin/materialize.min.css",
         "./bin/materialize.min.js",
-        "./fonts"
+        "./fonts/*"
+      ],
+      "dependencies": {}
+    },
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.min.css",
+        "./fonts/*"
       ],
       "dependencies": {}
     }

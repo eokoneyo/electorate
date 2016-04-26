@@ -23,13 +23,13 @@ gulp.task('getBowerFiles', function(){
 
     return gulp.src(mainFiles)
         .pipe(jsFilter)
-        .pipe(gulp.dest('./vendor'))
+        .pipe(gulp.dest('./vendor/js'))
         .pipe(jsFilter.restore)
         .pipe(filterByExtension('css'))
-        .pipe(gulp.dest('./vendor'))
+        .pipe(gulp.dest('./vendor/css'))
         .pipe(jsFilter.restore)
         //hack the process flow to get the fonts into the vendor folder inside a separate folder
-        .pipe(filter('**/*.{eot,svg,ttf,woff}'))
+        .pipe(filter('**/*.{eot,svg,ttf,woff,woff2}'))
         .pipe(gulp.dest('./vendor/fonts'));
 })
 
