@@ -147,7 +147,7 @@ function dante_widgets_init() {
 	'description'   => 'Sidebar for category page',
 	'before_widget' => '<div id="category-widget">',
 	'after_widget' 	=> '</div>',
-	'before_title' 	=> '<h2 class="rounded">',
+	'before_title' 	=> '<h2 class="category-heading">',
 	'after_title' 	=> '</h2>'
 	));
 

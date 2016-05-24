@@ -22,9 +22,6 @@
 				<div class="row">
 					<div class="col s12">
 						<?php the_content(); ?>
-						<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-						<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
-						<?php comments_template('', true); ?>
 					</div>
 				</div>
 			</div>
