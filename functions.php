@@ -89,9 +89,9 @@ function dante_register_required_plugins() {
 		),
 
 		array(
-			'name'      => 'Disqus',
-			'slug'      => 'disqus-comment-system',
-			'required'  => true,
+			'name'		=> 'Facebook Comments',
+			'slug'		=> 'facebook-comments-plugin',
+			'required'	=> true,
 		)
 
 
@@ -133,6 +133,7 @@ function load_project_dep() {
     wp_enqueue_style('dante' );
     wp_enqueue_script('materialize_js', get_template_directory_uri() . '/vendor/js/materialize.js', array ( 'jquery' ));
     wp_enqueue_script('interactions', get_template_directory_uri().'/assets/js/interactions.js', array('materialize_js'));
+    wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/7dea7fd0ac.js' );
 }
 add_action( 'wp_enqueue_scripts', 'load_project_dep' );
 

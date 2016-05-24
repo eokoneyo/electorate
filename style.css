@@ -23,7 +23,7 @@ main {
 }
 
 nav{
-	background: #fdd835;
+	background: #f7f7f7;
 }
 
 nav * {
@@ -65,6 +65,10 @@ nav .brand-logo:before {
 	border-width: 2px 0 0 2px;
 }
 
+blockquote {
+    border-left: 5px solid #fdd835;
+}
+
 @media only screen and (max-width: 40em) {
 
 	nav .brand-logo:after {
@@ -77,8 +81,8 @@ nav .brand-logo:before {
 }
 
 .brand-highlight {
-	background: #000;
-	color: #fff !important;
+	background: #fdd835;
+	color: #000 !important;
 	padding: .5em;
 	margin-left: .2em;
 }
@@ -121,7 +125,7 @@ nav .brand-logo:before {
 }
 
 #site-wrapper {
-	background: #f7f7f7;
+	background: #fff;
 }
 
 #site-wrapper .row {
@@ -138,6 +142,20 @@ nav .brand-logo:before {
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	height: 260px;
+}
+
+.post-card ~ .card-content {
+	position: relative;
+}
+
+.post-card ~ .card-content .btn-floating {
+	position: absolute;
+	top: -2em;
+    right: 2em;
+}
+
+.post-card ~ .card-content .btn-floating .fb_comments_count {
+	color: #000;
 }
 
 .post-card .index-thumbnails {
@@ -193,7 +211,7 @@ nav .brand-logo:before {
 	position: relative;
 }
 
-#single-post .article-jumbotron:after {
+/* #single-post .article-jumbotron:after {
 	background: linear-gradient(-45deg, #f7f7f7 16px, transparent 0), linear-gradient(45deg, #f7f7f7 16px, transparent 0);
     background-position: left-bottom;
     background-repeat: repeat-x;
@@ -205,7 +223,7 @@ nav .brand-logo:before {
     left: 0px;
     width: 100%;
     height: 32px;
-}
+} */
 
 #single-post .article-jumbotron .tint {
 	position: absolute;
@@ -258,6 +276,10 @@ nav .brand-logo:before {
 .category-posts .card-image img {
 	height: 100%;
 	object-fit: cover;
+}
+
+.category-posts .card-content .right a {
+	color: #000;
 }
 
 footer.page-footer {

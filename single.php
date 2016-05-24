@@ -9,12 +9,12 @@
 				<div class="post-title">
 					<div class="container">
 						<h2 class="white-text"><?php the_title(); ?></h2>
-						<p class="white-text"><?php echo the_date('d F Y', false); ?></p>
+						<p class="white-text"><i class="fa fa-calendar"></i> <?php echo the_date('d F Y', false); ?></p>
 						<div class="chip">
 							<?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
 						  	<?php echo get_the_author(); ?></p>
 						</div>
-						<p class="white-text"><?php echo dante_estimated_reading_time() ?> Read</p>
+						<p class="white-text"><i class="fa fa-eye"></i> <?php echo dante_estimated_reading_time() ?> Read</p>
 					</div>
 				</div>
 			</div>
@@ -22,6 +22,8 @@
 				<div class="row">
 					<div class="col s12">
 						<?php the_content(); ?>
+						<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+						<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 						<?php comments_template('', true); ?>
 					</div>
 				</div>

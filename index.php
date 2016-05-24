@@ -34,6 +34,9 @@
 									?>
 							    </div>
 							    <div class="card-content row valign-wrapper">
+							    	 <a class="btn-floating btn-large waves-effect waves-light yellow lighten-1">
+							    	 <span class="fb-comments-count" data-href="<?php the_permalink(); ?> "></span>
+							    	 </a>
 								    <div class="col s4 m2">
 						                <?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
 						            </div>
@@ -46,9 +49,6 @@
 					  	</div>
 					<?php endwhile; ?>
 				</div>
-
-				<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-				<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 			</div>
 			<?php else : ?>
 			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
