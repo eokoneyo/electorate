@@ -35,8 +35,7 @@
 							    </div>
 							    <div class="card-content row valign-wrapper">
 							    	 <a class="btn-floating btn-large waves-effect waves-light yellow lighten-1">
-							    	 <span class="fb-comments-count" data-href="<?php the_permalink(); ?> "></span>
-							    	 </a>
+							    	 <span class="fb-comments-count" data-href="<?php the_permalink(); ?> "></span><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
 								    <div class="col s4 m2">
 						                <?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
 						            </div>

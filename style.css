@@ -154,9 +154,13 @@ blockquote {
     right: 2em;
 }
 
-.post-card ~ .card-content .btn-floating .fb_comments_count {
+.post-card ~ .card-content .btn-floating .fb_comments_count{
 	color: #000;
 }
+
+ .post-card ~ .card-content .btn-floating i.fa {
+ 	color: #000;
+ }
 
 .post-card .index-thumbnails {
 	width: 100%;
