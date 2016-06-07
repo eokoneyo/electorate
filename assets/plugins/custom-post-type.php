@@ -112,10 +112,31 @@ function video_custom_post_type() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
+	//add_post_type_support( 'video', 'post-formats', array('video') );
 	register_post_type( 'video', $args );
 
 }
+
 add_action( 'init', 'video_custom_post_type', 0 );
+
+//Set default post formats for post types
+
+function set_default_post_format( $format ) {
+    global $post_type;
+
+    switch( $post_type ) {
+        case 'video' :
+            $format = 'video';
+            break;
+        case 'newsfeed' :
+            $format = 'quote';
+            break;
+    }
+
+    return $format;
+}
+
+add_filter( 'option_default_post_format', 'set_default_post_format' );
 
 
 
