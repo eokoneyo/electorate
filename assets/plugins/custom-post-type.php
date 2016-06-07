@@ -41,7 +41,7 @@ function newsfeed_custom_post_type() {
 		'label'                 => __( 'NewsFeed', 'text_domain' ),
 		'description'           => __( 'Contains all newsfeed articles', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'thumbnail', 'posts-formats', ),
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -97,7 +97,7 @@ function video_custom_post_type() {
 		'label'                 => __( 'Video', 'text_domain' ),
 		'description'           => __( 'Video Description', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( ),
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -116,9 +116,6 @@ function video_custom_post_type() {
 
 }
 add_action( 'init', 'video_custom_post_type', 0 );
-
-
-
 
 
 
