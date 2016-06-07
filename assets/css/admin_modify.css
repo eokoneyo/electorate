@@ -1,0 +1,11 @@
+/*Style Admin */
+
+.widefat tbody td.image.column-image {
+	overflow: hidden;
+}
+
+.widefat tbody td.image.column-image img {
+	object-fit: contain;
+	padding-right: 2em;
+	width: 100%;
+}
