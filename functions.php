@@ -3,7 +3,7 @@
 require_once get_template_directory() . '/assets/plugins/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/assets/plugins/custom-post-type.php';
 
-function dante_setup() {
+function electorate_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -54,7 +54,7 @@ function dante_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 
-add_action( 'tgmpa_register', 'dante_register_required_plugins' );
+add_action( 'tgmpa_register', 'electorate_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -69,7 +69,7 @@ add_action( 'tgmpa_register', 'dante_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function dante_register_required_plugins() {
+function electorate_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -108,7 +108,7 @@ function dante_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'dante',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'electorate',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.
@@ -123,15 +123,15 @@ function dante_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 
-// dante_setup
-add_action( 'after_setup_theme', 'dante_setup' );
+// electorate_setup
+add_action( 'after_setup_theme', 'electorate_setup' );
 
 //Load vendor files
 function load_project_dep() {
     wp_register_style('materialize', get_template_directory_uri() . '/vendor/css/materialize.css');
     wp_register_style('font-awesome', get_template_directory_uri().'/vendor/css/font-awesome.min.css');
-    wp_register_style('dante', get_stylesheet_uri(), array( 'materialize','font-awesome'));
-    wp_enqueue_style('dante' );
+    wp_register_style('electorate', get_stylesheet_uri(), array( 'materialize','font-awesome'));
+    wp_enqueue_style('electorate' );
     wp_enqueue_script('materialize_js', get_template_directory_uri() . '/vendor/js/materialize.js', array ( 'jquery' ));
     wp_enqueue_script('interactions', get_template_directory_uri().'/assets/js/interactions.js', array('materialize_js'));
     wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/7dea7fd0ac.js' );
@@ -140,7 +140,7 @@ add_action( 'wp_enqueue_scripts', 'load_project_dep' );
 
 
 //Register Widgets Area Space for theme
-function dante_widgets_init() {
+function electorate_widgets_init() {
 
 	register_sidebar(array(
 	'name'          => 'Category Sidebar',
@@ -162,37 +162,14 @@ function dante_widgets_init() {
 	'after_title' 	=> '</h2>'
 	));
 }
-add_action( 'widgets_init', 'dante_widgets_init' );
+add_action( 'widgets_init', 'electorate_widgets_init' );
 
-//Initalize custom avatar style for dante
+//Initalize custom avatar style for electorate
 add_filter('get_avatar','add_gravatar_class');
 
 function add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='avatar circle responsive-img valign", $class);
     return $class;
-}
-
-/*
-* Setup Estimated Reading time for posts.
-*
-* https://www.binarymoon.co.uk/2013/10/wordpress-estimated-reading-time/
-*/
-function dante_estimated_reading_time() {
-
-	$post = get_post();
-
-	$words = str_word_count( strip_tags( $post->post_content ) );
-	$minutes = floor( $words / 120 );
-	$seconds = floor( $words % 120 / ( 120 / 60 ) );
-
-	if ( 1 <= $minutes ) {
-		$estimated_time = $minutes . ' minute' . ($minutes == 1 ? '' : 's') . ', ' . $seconds . ' second' . ($seconds == 1 ? '' : 's');
-	} else {
-		$estimated_time = $seconds . ' second' . ($seconds == 1 ? '' : 's');
-	}
-
-	return $estimated_time;
-
 }
 
 /*
