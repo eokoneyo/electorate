@@ -13,7 +13,7 @@
 		<header>
 	      	<nav>
 			    <div class="nav-wrapper">
-			      <a class="brand-logo" href="<?php echo home_url('/'); ?>"><span class="brand-highlight"><?php bloginfo('name') ?></span></a>
+			      <a class="brand-logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name') ?></a>
 			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			      <?php     /**
 			      	* Displays a navigation menu
