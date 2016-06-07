@@ -1,6 +1,7 @@
 <?php
 
 require_once get_template_directory() . '/assets/plugins/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/assets/plugins/custom-post-type.php';
 
 function dante_setup() {
 
