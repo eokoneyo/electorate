@@ -152,6 +152,13 @@ blockquote {
 	height: 260px;
 }
 
+.list-item-card{
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	height: 80px;
+}
+
 .post-card ~ .card-content {
 	position: relative;
 }
