@@ -53,31 +53,27 @@
 							$loop = new WP_Query( $args ); ?>
 								<div class="col s12 l12">
 								  	<div class="row">
-										<?php while ($loop->have_posts()): $loop->the_post() ?>
-									  		<div class="col s12 l12">
-									  			<div class="card">
-												    <div class="card-content row valign-wrapper">
-													    <div class="col s4 m2">
-											                <?php
-																// Output the featured image.
-															if ( has_post_thumbnail() ) :
-																$feat_image = get_the_post_thumbnail_url($post->ID, 'thumbnail'); ?>
-																<img src="<?php echo $feat_image;?>" alt="" class="circle responsive-img">
-										
-															<?php else: ?>
-																<img alt="" class="noimage-content circle responsive-img">
-															<?php endif; ?>
-											            </div>
-											            <div class="col s8 m10">
-											            	<div class="title">
-																<a class="black-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a>
-																<p class="date"><?php echo the_date('d F Y', false); ?></p>
-															</div>
-											            </div>
-												    </div>
-												</div>
-									  		</div>
-										<?php endwhile; ?>
+								  		<div class="col s12 l12">
+									  		<ul class="collection">
+												<?php while ($loop->have_posts()): $loop->the_post() ?>
+											  		<li class="collection-item avatar">
+														<?php
+															// Output the featured image.
+														if ( has_post_thumbnail() ) :
+														$feat_image = get_the_post_thumbnail_url($post->ID, 'thumbnail'); ?>
+															<img src="<?php echo $feat_image;?>" alt="" class="circle">
+														<?php else: ?>
+															<img alt="" class="noimage-content circle responsive-img">
+														<?php endif; ?>
+														<span class="title">
+														    <a class="black-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a>
+														</span>
+														<p class="date"><?php echo the_date('d F Y', false); ?></p>
+														<a href="#!" class="secondary-content"><i class="material-icons">whatshot</i></a>
+													</li>
+												<?php endwhile; ?>
+											</ul>
+									  	</div>
 								  	</div>
 								</div>
 						</div>
@@ -88,11 +84,9 @@
 			</div>
 			<div class="col s12 l4">
 				<?php 
-
 				//create widget insert
 
 				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('polling-widget') ) : 
-
 				endif; ?>
 			</div>
 		</div>
