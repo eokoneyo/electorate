@@ -1,6 +1,6 @@
 <div class="newsfeed">
 		<div class="container">
-			<h1 class="section-heading">News Feed <span class="highlight"></span></h1>
+			<h1 class="section-heading">News & Opinion <span class="highlight"></span></h1>
 			<div class="row">
 				<?php
 					$args = array( 'post_type' => 'newsfeed', 'posts_per_page' => 10 );
@@ -16,10 +16,6 @@
 											<div class="index-thumbnails" style="background-image: url(<?php
 												$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); echo $feat_image;?>);">
 												<div class="tint"></div>
-												<div class="title">
-													<h5 class="white-text"><a class="white-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a></h5>
-													<p class="date"><?php echo the_date('d F Y', false); ?></p>
-												</div>
 											</div>
 											
 											<?php 
@@ -41,8 +37,8 @@
 						                <?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
 						            </div>
 						            <div class="col s8 m10">
-						                <p><?php echo get_the_author(); ?></p>
-						                <?php the_category(', '); ?>
+						            <a class="black-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a>
+									<p class="date"><?php echo the_date('d F Y', false); ?></p>
 						            </div>
 							    </div>
 							  </div>

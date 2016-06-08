@@ -13,8 +13,8 @@ function newsfeed_custom_post_type() {
 	$labels = array(
 		'name'                  => _x( 'News Feed', 'Post Type General Name', 'electorate' ),
 		'singular_name'         => _x( 'news', 'Post Type Singular Name', 'electorate' ),
-		'menu_name'             => __( 'NewsFeed', 'electorate' ),
-		'name_admin_bar'        => __( 'NewsFeed', 'electorate' ),
+		'menu_name'             => __( 'News Feed', 'electorate' ),
+		'name_admin_bar'        => __( 'News Feed', 'electorate' ),
 		'archives'              => __( 'Item Archives', 'electorate' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'electorate' ),
 		'all_items'             => __( 'All Items', 'electorate' ),
