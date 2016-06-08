@@ -52,7 +52,7 @@
 						<?php endwhile; ?>
 
 						<?php
-							$args = array('offset' => 1, 'posts_per_page' => 2 );
+							$args = array('offset' => 1, 'posts_per_page' => 3 );
 							$loop = new WP_Query( $args ); ?>
 							<div class="col s12 l4">
 							  	<div class="row">
@@ -60,14 +60,23 @@
 								  		<div class="col s12 l12">
 								  			<div class="card">
 											    <div class="card-content row valign-wrapper">
-											    	 <a class="btn-floating btn-large waves-effect waves-light yellow lighten-1">
-											    	 <span class="fb-comments-count" data-href="<?php the_permalink(); ?> "></span><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
 												    <div class="col s4 m2">
-										                <?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
+										                <?php
+															// Output the featured image.
+														if ( has_post_thumbnail() ) :
+															$feat_image = get_the_post_thumbnail_url($post->ID, 'thumbnail'); ?>
+															<img src="<?php echo $feat_image;?>" alt="" class="circle responsive-img">
+									
+														<?php else: ?>
+															<img alt="" class="noimage-content circle responsive-img">
+														<?php endif; ?>
 										            </div>
 										            <div class="col s8 m10">
+										            	<div class="title">
+															<a class="black-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a>
+															<p class="date"><?php echo the_date('d F Y', false); ?></p>
+														</div>
 										                <p><?php echo get_the_author(); ?></p>
-										                <?php the_category(', '); ?>
 										            </div>
 											    </div>
 											</div>
