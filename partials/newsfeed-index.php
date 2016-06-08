@@ -1,6 +1,6 @@
 <div class="newsfeed">
 		<div class="container">
-			<h1>NewsFeed</h1>
+			<h1 class="section-heading">News Feed <span class="highlight"></span></h1>
 			<div class="row">
 				<?php
 					$args = array( 'post_type' => 'newsfeed', 'posts_per_page' => 10 );

@@ -7,9 +7,6 @@ Version: 0.0.1
 */
 
 /* Utilites */
-.container {
-	width: 85% !important;
-}
 
 body {
     display: flex;
@@ -21,8 +18,31 @@ main {
   flex: 1 0 auto;
 }
 
+.container {
+	width: 85% !important;
+}
+
 .normalize-font {
 	font-weight: 300;
+}
+
+.section-heading{
+	font-weight: 400;
+	font-size: 24px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.section-heading::after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	margin-left: .3em;
+	height: 8px;
+	border-bottom: 3px solid #d8d3d3;
+	border-top: 3px solid #d8d3d3;
+	width: 100%;
+	top: .4em;
 }
 
 nav{
@@ -32,7 +52,6 @@ nav{
 nav * {
 	color: #000 !important;
 }
-
 
 nav ul li a {
 	text-transform: uppercase;
@@ -47,26 +66,6 @@ nav .brand-logo {
 	font-size: 1.4em;
 	text-transform: uppercase;
 }
-
-/* nav .brand-logo:after, nav .brand-logo:before {
-	content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border: 2px solid #fff;
-}
-
-nav .brand-logo:after {
-    right: -0.2em;
-	bottom: 0.3em;
-    border-width: 0 2px 2px 0;
-}
-
-nav .brand-logo:before {
-	top: 0.4em;
-	left: 0;
-	border-width: 2px 0 0 2px;
-} */
 
 blockquote {
     border-left: 5px solid #fdd835;
@@ -148,13 +147,6 @@ blockquote {
 	padding-top: 2em;
 }
 
-.post-card {
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	height: 260px;
-}
-
 .list-item-card{
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
@@ -162,17 +154,31 @@ blockquote {
 	height: 80px;
 }
 
-.post-card ~ .card-content {
+.post-card, .video-card {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.post-card {
+	height: 260px;
+}
+
+.video-card{
+	height: 200px;
+}
+
+.post-card ~ .card-content, .video-card ~ .card-content {
 	position: relative;
 }
 
-.post-card ~ .card-content .btn-floating {
+.post-card ~ .card-content .btn-floating, .video-card ~ .card-content .btn-floating {
 	position: absolute;
 	top: -2em;
     right: 2em;
 }
 
-.post-card ~ .card-content .btn-floating .fb_comments_count{
+.post-card ~ .card-content .btn-floating .fb_comments_count, .video-card ~ .card-content .btn-floating .fb_comments_count{
 	color: #000;
 }
 
@@ -180,39 +186,51 @@ blockquote {
  	color: #000;
  }
 
-.post-card .index-thumbnails {
+.post-card .index-thumbnails, .video-card .index-thumbnails {
 	width: 100%;
 	height: 100%;
 	background-size: cover;
 }
 
-.post-card .title {
+.post-card .title, .video-card .title {
 	position: absolute;
 	bottom: 0%;
 	padding-left: 1em;
 	z-index: 3;
 }
 
-.post-card .noimage-content {
+.post-card .noimage-content, .video-card .noimage-content {
 	padding: 1em;
 	height: 100%;
 	overflow-y: hidden;
 }
 
-.post-card .noimage-content h5 {
+.post-card .noimage-content h5, .post-card .noimage-content h5 {
 	margin-bottom: 0px;
 }
 
-.post-card .noimage-content h5 a , .post-card .title h5, .card-content a[rel=category] {
+.post-card .noimage-content h5 a , .post-card .title h5, .card-content a[rel=category], .video-card .noimage-content h5 a , .video-card .title h5, .card-content a[rel=category] {
 	font-weight: 300;
 }
 
-.post-card .noimage-content h5 a , .card-content a[rel=category] {
+.post-card .noimage-content h5 a , .video-card .noimage-content h5 a, .card-content a[rel=category] {
 	font-size: 0.8em;
 }
 
-.post-card .title h5 {
+.post-card .title h5, .video-card .title h5 {
 	font-size: 1.2em;
+}
+
+.video-card .play {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+}
+
+.video-card .play .fa {
+	color: #fff;
 }
 
 .card-content a[rel=category] {

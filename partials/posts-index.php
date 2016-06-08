@@ -7,7 +7,7 @@
 						<?php while (have_posts()): the_post() ?>
 							<?php $c++;
 							if( !$paged && $c == 1) :?>
-							  	<div class="col s12 l7">
+							  	<div class="col s12 l8">
 							  		<div class="card">
 									    <div class="card-image post-card">
 											<?php
@@ -52,7 +52,7 @@
 						<?php endwhile; ?>
 
 						<?php
-							$args = array('offset' => 1, 'posts_per_page' => 3 );
+							$args = array('offset' => 1, 'posts_per_page' => 5 );
 							$loop = new WP_Query( $args ); ?>
 							<div class="col s12 l4">
 							  	<div class="row">
@@ -76,7 +76,6 @@
 															<a class="black-text" href="<?php the_permalink(); ?> ">  <?php the_title(); ?></a>
 															<p class="date"><?php echo the_date('d F Y', false); ?></p>
 														</div>
-										                <p><?php echo get_the_author(); ?></p>
 										            </div>
 											    </div>
 											</div>
