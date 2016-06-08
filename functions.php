@@ -167,6 +167,16 @@ function electorate_widgets_init() {
 	'before_title' 	=> '<h2 class="rounded">',
 	'after_title' 	=> '</h2>'
 	));
+
+	register_sidebar(array(
+	'name'          => 'Polling Container',
+	'id'            => 'polling-widget',
+	'description'   => 'Widget space for containing implementation of pollling system',
+	'before_widget' => '<div id="polling-widget" class="col s12 l12">',
+	'after_widget' 	=> '</div>',
+	'before_title' 	=> '<h2 class="rounded">',
+	'after_title' 	=> '</h2>'
+	));
 }
 add_action( 'widgets_init', 'electorate_widgets_init' );
 
